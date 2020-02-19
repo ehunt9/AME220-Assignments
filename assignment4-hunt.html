@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link href="assignment4-hunt.css" rel="stylesheet">
+    <h2>Emmett Hunt</h2>
+    <p><a href="https://en.wikipedia.org/wiki/Japanese_wordplay">765-765-7650</a></p>
+    <p><a href="https://en.wikipedia.org/wiki/The_Simpsons_house">765 Evergreen Terrace</a></p>
+    <p><a href="mailto: ehunt9@asu.edu">ehunt9@asu.edu</a></p>
+  </head>
+
+  <body>
+    <button class="accordion">Objective</button>
+    <div class="panel">
+      <p>My objective in this course is understanding the basics of CSS, HTML and JavaScript, as well as knowing the current standards and expectations of modern web design.</p>
+    </div>
+
+    <button class="accordion">Education</button>
+    <div class="panel"
+      <table>
+        <br>
+        <tr>
+          <td>Estrella  Mountain Community College</td>
+        </tr>
+        <br>
+        <tr>
+          <td>Arizona State University</td>
+        </tr>
+        <br>
+      </table>
+      <br>
+    </div>
+
+    <button class="accordion">Experience</button>
+    <div class="panel">
+      <ol>
+        <li>Prior experience with coding includes learning C++ while attending EMCC. Other languages I have used include Max, a visual language designed around helping artists and designers, and Xcode, an IDE for Mac that uses a variety of development tools provided by Apple to create programs and software compatible with macOS.</li>
+      </ol>
+    </div>
+
+    <h4>References</h4>
+    <ul>
+      <li>Prior employer - 454-545-4545</li>
+      <li>Former teacher - 100-010-0010</li>
+    </ul>
+
+  </body>
+
+  <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+</html>
