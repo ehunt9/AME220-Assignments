@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  </head>
+<style>
+  img{
+display: block;
+height: 300px;
+  }
+  .active {
+    background: gold;
+  }
+  </style>
+  <body>
+    <img>
+
+    <button onclick='goPrev()'>Prev</button>
+
+    <div id='numWrapper'>
+    </div>
+
+    <button onclick='goNext()'>Next</button>
+
+    </body>
+    <script>
+
+      var imgs = location.hash.replace("#","").split(",")
+      var markup = "";
+      for(var i = 0; i < imgs.length; i++){
+        markup = markup + "<button onclick='goToSlide(" + i + ")'>" + (i+1) + "</button>"
+      }
+      document.getElementById("numWrapper").innerHTML = markup;
+      $("img").attr("src", imgs[0])
+
+      var currSlide = 0;
+
+      var goToSlide = function(n) {
+        $("img").attr("src", imgs[n])
+        currSlide = n;
+        $("#numWrapper button").removeClass("active")
+        $($("#numWrapper button")[currSlide]).addClass("active")
+      }
+
+      var goPrev = function() {
+        currSlide = currSlide - 1;
+        if(currSlide < 0){
+          currSlide = imgs.length - 1;
+        }
+        goToSlide(currSlide);
+      }
+
+      var goNext = function() {
+        currSlide = currSlide + 1;
+        if(currSlide > imgs.length){
+          currSlide = 0;
+        }
+        goToSlide(currSlide);
+      }
+
+      </script>
+</html>
